@@ -2,32 +2,27 @@
 
 */
 let minWidth = 539
-let nav
 let created = false
 
-let homePageTable = document.querySelector('table')
+const homePageTable = document.querySelector("table")
+const nav = document.createElement("div")
+
+nav.style.width = "5em"
+nav.style.height = "10em"
+nav.style.backgroundColor = "red"
+nav.style.position = "fixed"
+nav.style.top = "0px"
+nav.style.left = "0px"
 
 const handleResize = () => {
-  console.log(window.innerWidth)
-  if (window.innerWidth < minWidth && !created) {
-    // if too small
-    createNav()
-  } else if (window.innerWidth >= minWidth && nav) {
+  if (window.outerWidth < minWidth && !created) {
+    homePageTable.appendChild(nav)
+    created = true
+  } else if (window.outerWidth >= minWidth) {
     nav.remove()
     created = false
   }
 }
 
-const createNav = () => {
-  let tag = document.createElement('p')
-  var main = document.getElementsByClassName('main')[0]
-  
-  tag.id = 'nav-style'
-  
-  main.appendChild(tag)
-  nav = document.getElementById('nav-style')
-  created = true
-}
-
 handleResize()
-window.addEventListener('resize', handleResize)
+window.addEventListener("resize", handleResize)
