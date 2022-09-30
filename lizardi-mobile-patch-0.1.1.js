@@ -24,5 +24,14 @@ const handleResize = () => {
   }
 }
 
+var style = document.createElement("style")
+style.innerHTML = 
+  `@media (max-width: 500px) {
+      table {
+        position: absolute;
+      }
+    }`
+document.head.append(style);
+
 handleResize()
 window.addEventListener("resize", handleResize)
