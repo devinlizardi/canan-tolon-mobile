@@ -1,8 +1,6 @@
 /*
 
 */
-console.log('script start')
-
 let minWidth = 539
 let created = false
 
@@ -16,16 +14,15 @@ nav.style.position = "fixed"
 nav.style.top = "0px"
 nav.style.left = "0px"
 
-nav.innerHTML = 
-  `<ul>
-    <li><a href=${'#'}>about</a></li>
-    <li><a href=${'#'}>biograghy</a></li>
-    <li><a href=${'#'}>contact</a></li>
+nav.innerHTML = `<ul>
+    <li><a href=${"#"}>about</a></li>
+    <li><a href=${"#"}>biograghy</a></li>
+    <li><a href=${"#"}>contact</a></li>
   </ul>
   `
 
 const handleResize = () => {
-  console.log(window.outerWidth, window.innerWidth)
+  //console.log(window.outerWidth, window.innerWidth)
 
   if (window.innerWidth < minWidth && !created) {
     homePageTable.appendChild(nav)
@@ -37,13 +34,16 @@ const handleResize = () => {
 }
 
 var style = document.createElement("style")
-style.innerHTML = 
-  `@media (max-width: 500px) {
-      table {
-        position: absolute;
-      }
-    }`
-document.head.append(style);
+style.innerHTML = `  
+  @media not (any-hover: hover) {
+    body {
+      position: relative;
+      top: 50%;
+    }
+  }`
+document.head.append(style)
+
+console.log(document.body)
 
 handleResize()
 window.addEventListener("resize", handleResize)
