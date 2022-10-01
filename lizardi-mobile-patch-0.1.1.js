@@ -38,12 +38,10 @@ style.innerHTML = `
   @media not (any-hover: hover) {
     body {
       position: relative;
-      top: 50%;
+      top: calc(50vh - 405px);
     }
   }`
 document.head.append(style)
 
-console.log(document.body)
-
-handleResize()
-window.addEventListener("resize", handleResize)
+//handleResize()
+//window.addEventListener("resize", handleResize)
