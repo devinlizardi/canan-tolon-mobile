@@ -1,5 +1,7 @@
 /*
-
+  Used CSS injection to handle homepage mobile support,
+  because this webpage was generated from Dreamweaver 
+  larger fixes are going to be difficult.
 */
 
 var style = document.createElement("style")
